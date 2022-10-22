@@ -1,6 +1,7 @@
 const http = require('http');
 
-
+//first method of creating server
+/*
 const server = http.createServer((req,res)=>{
     if(req.url === '/')
     res.end('Welcome to homepage');
@@ -17,3 +18,15 @@ const server = http.createServer((req,res)=>{
 })
 
 server.listen(5000)
+
+*/
+
+// second method using event emitter
+
+const server2 = http.createServer();
+
+server2.on('request', (req,res)=>{
+    res.end('Welcome')
+})
+
+server2.listen(5000);
